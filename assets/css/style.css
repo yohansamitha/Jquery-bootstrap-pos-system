@@ -1,0 +1,18 @@
+.carousel-item{
+    width: 100%;
+    height: 88vh;
+    overflow: hidden;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#navbarTogglerDemo02>ul>li{
+    transition: .2s;
+}
+
+#navbarTogglerDemo02>ul>li:hover {
+    font-weight: bold;
+}
