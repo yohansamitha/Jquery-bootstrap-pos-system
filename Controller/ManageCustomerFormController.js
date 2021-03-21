@@ -1,16 +1,7 @@
-$('#btnSaveCustomer').click(function () {
-    saveCustomer();
-});
-
-$('#btnCancel').click(function () {
-    clearAll();
-    loadCustomerID();
-});
-
 function loadCustomerID() {
     try {
         let lastCustomerID = customerDATA[customerDATA.length - 1].get__customerId().substr(1);
-        let newID = parseInt(lastCustomerID)+1;
+        let newID = parseInt(lastCustomerID) + 1;
         if (newID < 10) {
             $('#CustomerID').text("C00" + newID);
         } else if (newID < 100) {
@@ -18,29 +9,14 @@ function loadCustomerID() {
         } else {
             $('#CustomerID').text("C" + newID);
         }
-    }catch (e) {
+    } catch (e) {
         $('#CustomerID').text("C001");
     }
 }
 
 loadCustomerID();
 
-function saveCustomer() {
-    let cusID = $('#CustomerID').text();
-    let cusName = $('#txtCustomerName').val();
-    let cusAddress = $('#txtCustomerAddress').val();
-    let cusEmailAddress = $('#txtEmailAddress').val();
-    let cusTelephoneNumber = $('#txtPhoneNumber').val();
-
-    let customer = new Customer(cusID, cusName, cusAddress, cusEmailAddress, cusTelephoneNumber);
-    let number = customerDATA.push(customer);
-    console.log(number);
-    loadAllCustomer();
-    clearAll();
-    loadCustomerID();
-}
-
-function clearAll() {
+function clearAllCustomer() {
     $('#CustomerID').text("");
     $('#txtCustomerName').val("");
     $('#txtCustomerAddress').val("");
@@ -71,3 +47,28 @@ function loadAllCustomer() {
         $('#txtPhoneNumber').val(cusTelephoneNumber);
     });
 }
+
+function saveCustomer() {
+    let cusID = $('#CustomerID').text();
+    let cusName = $('#txtCustomerName').val();
+    let cusAddress = $('#txtCustomerAddress').val();
+    let cusEmailAddress = $('#txtEmailAddress').val();
+    let cusTelephoneNumber = $('#txtPhoneNumber').val();
+
+    let customer = new Customer(cusID, cusName, cusAddress, cusEmailAddress, cusTelephoneNumber);
+    let number = customerDATA.push(customer);
+    console.log(number);
+    loadAllCustomer();
+    clearAllCustomer();
+    loadCustomerID();
+}
+
+$('#btnSaveCustomer').click(function () {
+    saveCustomer();
+});
+
+$('#btnCancelCustomer').click(function () {
+    clearAllCustomer();
+    loadCustomerID();
+    loadAllCustomer();
+});

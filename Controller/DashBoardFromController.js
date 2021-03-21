@@ -8,7 +8,7 @@ function hideAll() {
 
 hideAll();
 // document.getElementById('carouselSection').style.display = "block";
-document.getElementById('manageCustomerSection').style.display = "block";
+document.getElementById('manageItemSection').style.display = "block";
 
 document.getElementById('btnHomePage').addEventListener("click", function () {
     hideAll();
