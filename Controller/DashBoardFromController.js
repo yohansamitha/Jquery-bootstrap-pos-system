@@ -1,5 +1,5 @@
 function hideAll() {
-    // $("#Page1,#Page2,#Page3,#Page4").css('display','none');
+    // $("#carouselSection,#manageCustomerSection,#manageItemSection,#placeOrderSection").hide();
     document.getElementById('carouselSection').style.display = "none";
     document.getElementById('manageCustomerSection').style.display = "none";
     document.getElementById('manageItemSection').style.display = "none";
@@ -7,25 +7,25 @@ function hideAll() {
 }
 
 hideAll();
-document.getElementById('carouselSection').style.display = "block";
+// document.getElementById('carouselSection').style.display = "block";
+document.getElementById('manageCustomerSection').style.display = "block";
 
-document.getElementById('homePage').addEventListener("click", function () {
-    console.log("button testing");
+document.getElementById('btnHomePage').addEventListener("click", function () {
     hideAll();
     document.getElementById('carouselSection').style.display = "block";
 });
 
-document.getElementById('manageCustomerPage').addEventListener("click", function () {
+document.getElementById('btnManageCustomer').addEventListener("click", function () {
     hideAll();
     document.getElementById('manageCustomerSection').style.display = "block";
 });
 
-document.getElementById('manageItemPage').addEventListener("click", function () {
+document.getElementById('btnManageItem').addEventListener("click", function () {
     hideAll();
     document.getElementById('manageItemSection').style.display = "block";
 });
 
-document.getElementById('placeOrderPage').addEventListener("click", function () {
+document.getElementById('btnPlaceOrder').addEventListener("click", function () {
     hideAll();
     document.getElementById('placeOrderSection').style.display = "block";
 });

@@ -1,0 +1,2 @@
+var customerDATA = [];
+var itemDATA = [];

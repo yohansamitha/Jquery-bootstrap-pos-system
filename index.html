@@ -21,16 +21,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li id="homePage" class="btn nav-item nav-link active text-danger">
+                <li class="btn nav-item nav-link active text-danger" id="btnHomePage">
                     Home
                 </li>
-                <li id="manageCustomerPage" class="btn nav-item nav-link active text-danger">
+                <li class="btn nav-item nav-link active text-danger" id="btnManageCustomer">
                     Manage Customer
                 </li>
-                <li id="manageItemPage" class="btn nav-item nav-link active text-danger">
+                <li class="btn nav-item nav-link active text-danger" id="btnManageItem">
                     Manage Item
                 </li>
-                <li id="placeOrderPage" class="btn nav-item nav-link active text-danger">
+                <li class="btn nav-item nav-link active text-danger" id="btnPlaceOrder">
                     PlaceOrder
                 </li>
 
@@ -87,7 +87,7 @@
                 <h5>Customer ID</h5>
             </div>
             <div class="col ">
-                <h5>C001</h5>
+                <h5 id="CustomerID">C001</h5>
             </div>
         </div>
     </article>
@@ -95,32 +95,32 @@
     <section class="row ">
         <article class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <div class="form-floating mb-3">
-                <input class="form-control" id="customerName" placeholder="name@example.com" type="text">
-                <label for="customerName">Customer Name</label>
+                <input class="form-control" id="txtCustomerName" placeholder="name@example.com" type="text">
+                <label for="txtCustomerName">Customer Name</label>
             </div>
             <div class="form-floating mb-3">
-                <input class="form-control" id="customerAddress" placeholder="name@example.com" type="text">
-                <label for="customerAddress">Customer address</label>
+                <input class="form-control" id="txtCustomerAddress" placeholder="name@example.com" type="text">
+                <label for="txtCustomerAddress">Customer address</label>
             </div>
             <div class="form-floating mb-3">
-                <input class="form-control " id="emailAddress" placeholder="name@example.com" type="email">
-                <label for="emailAddress">Email address</label>
+                <input class="form-control " id="txtEmailAddress" placeholder="name@example.com" type="email">
+                <label for="txtEmailAddress">Email address</label>
             </div>
         </article>
         <article class="col">
             <div class="form-floating mb-3">
-                <input class="form-control " id="phoneNumber" placeholder="name@example.com" type="text">
-                <label for="phoneNumber">Phone No</label>
+                <input class="form-control " id="txtPhoneNumber" placeholder="name@example.com" type="text">
+                <label for="txtPhoneNumber">Phone No</label>
             </div>
         </article>
     </section>
 
     <section class="row mb-3">
         <article class="col">
-            <button class="btn btn-success mt-2" type="button">Save Customer</button>
-            <button class="btn btn-primary mt-2" type="button">Update Customer</button>
-            <button class="btn btn-warning mt-2" type="button">Search</button>
-            <button class="btn btn-danger mt-2" type="button">Delete Customer</button>
+            <button class="btn btn-success mt-2" id="btnSaveCustomer" type="button">Save Customer</button>
+            <button class="btn btn-primary mt-2" id="btnUpdateCustomer" type="button">Update Customer</button>
+            <button class="btn btn-warning mt-2" id="btnSearch" type="button">Search</button>
+            <button class="btn btn-danger mt-2" id="btnDeleteCustomer" type="button">Delete Customer</button>
         </article>
     </section>
 
@@ -135,7 +135,7 @@
                 <th scope="col">Phone Number</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="tblCustomerDetail">
             <tr>
                 <th scope="row">C001</th>
                 <td>Mark</td>
@@ -143,48 +143,7 @@
                 <td>@mdo</td>
                 <td>@mdo</td>
             </tr>
-            <tr>
-                <th scope="row">C002</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">C003</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">C004</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">C005</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">C006</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">C007</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
+
 
             </tbody>
 
@@ -319,22 +278,22 @@
     </article>
     <section class="row">
         <article class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
-            <!--            <div class="form-floating mb-3">-->
-            <!--                -->
-            <!--            </div>-->
+            <!--<div class="form-floating mb-3">
 
-            <!--            <div class="dropdown">-->
-            <!--                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"-->
-            <!--                   data-bs-toggle="dropdown" aria-expanded="false">-->
-            <!--                    Dropdown link-->
-            <!--                </a>-->
+            </div>
 
-            <!--                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
-            <!--                    <li><a class="dropdown-item" href="#">Action</a></li>-->
-            <!--                    <li><a class="dropdown-item" href="#">Another action</a></li>-->
-            <!--                    <li><a class="dropdown-item" href="#">Something else here</a></li>-->
-            <!--                </ul>-->
-            <!--            </div>-->
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown link
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>-->
 
             <div class="form-floating mb-3">
                 <input class="form-control" id="placeOrderCustomerName" placeholder="name@example.com" type="text">
@@ -462,8 +421,9 @@
     </section>
 </section>
 
-<script src="Controller/DashBoardFromController.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="Controller/DashBoardFromController.js"></script>
+<script src="Controller/ManageCustomerForm.js"></script>
 </body>
 </html>
