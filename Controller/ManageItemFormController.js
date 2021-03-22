@@ -68,6 +68,7 @@ function saveItem() {
     loadALLItem();
     clearAllItem();
     loadItemID();
+    loadAutoBind();
 }
 
 // save button action

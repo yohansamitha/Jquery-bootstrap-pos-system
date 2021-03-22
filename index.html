@@ -119,9 +119,11 @@
         <article class="col">
             <button class="btn btn-success mt-2" id="btnSaveCustomer" type="button">Save Customer</button>
             <button class="btn btn-primary mt-2" id="btnUpdateCustomer" type="button">Update Customer</button>
-            <button class="btn btn-warning mt-2" id="btnSearchCustomer" type="button" onclick="clearAll()">Search</button>
+            <button class="btn btn-warning mt-2" id="btnSearchCustomer" onclick="clearAll()" type="button">Search
+            </button>
             <button class="btn btn-danger mt-2" id="btnDeleteCustomer" type="button">Delete Customer</button>
-            <button class="btn btn-warning mt-2" id="btnCancelCustomer" type="button" onclick="clearAll()">Cancel</button>
+            <button class="btn btn-warning mt-2" id="btnCancelCustomer" onclick="clearAll()" type="button">Cancel
+            </button>
         </article>
     </section>
 
@@ -189,11 +191,11 @@
 
     <section class="row mb-3">
         <article class="col">
-            <button id="btnSaveItem" class="btn btn-success mt-2" type="button">Save Item</button>
-            <button id="btnUpdateItem" class="btn btn-primary mt-2" type="button">Update Item</button>
-            <button id="btnSearchItem" class="btn btn-warning mt-2" type="button">Search</button>
-            <button id="btnDeleteItem" class="btn btn-danger mt-2" type="button">Delete Item</button>
-            <button id="btnCancelItem" class="btn btn-warning mt-2" type="button">Cancel</button>
+            <button class="btn btn-success mt-2" id="btnSaveItem" type="button">Save Item</button>
+            <button class="btn btn-primary mt-2" id="btnUpdateItem" type="button">Update Item</button>
+            <button class="btn btn-warning mt-2" id="btnSearchItem" type="button">Search</button>
+            <button class="btn btn-danger mt-2" id="btnDeleteItem" type="button">Delete Item</button>
+            <button class="btn btn-warning mt-2" id="btnCancelItem" type="button">Cancel</button>
         </article>
     </section>
 
@@ -209,13 +211,13 @@
             </tr>
             </thead>
             <tbody id="tblItemDetails">
-<!--            <tr>-->
-<!--                <th scope="row">I001</th>-->
-<!--                <td>Mark</td>-->
-<!--                <td>Otto</td>-->
-<!--                <td>@mdo</td>-->
-<!--                <td>@mdo</td>-->
-<!--            </tr>-->
+            <!--            <tr>-->
+            <!--                <th scope="row">I001</th>-->
+            <!--                <td>Mark</td>-->
+            <!--                <td>Otto</td>-->
+            <!--                <td>@mdo</td>-->
+            <!--                <td>@mdo</td>-->
+            <!--            </tr>-->
 
 
             </tbody>
@@ -232,7 +234,7 @@
                 <h5>Order ID</h5>
             </div>
             <div class="col ">
-                <h5>O001</h5>
+                <h5 id="placeOrderID">O001</h5>
             </div>
         </div>
     </article>
@@ -254,42 +256,133 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
             </div>-->
+            <div class="autocomplete form-floating mb-3">
+                <input class="form-control" id="txtPlaceOrderCustomerName" placeholder="name@example.com" type="text">
+                <label for="txtPlaceOrderCustomerName">Customer Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="txtPlaceOrderCustomerAddress" placeholder="name@example.com"
+                       type="text">
+                <label for="txtPlaceOrderCustomerAddress">Customer address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control " id="txtPlaceOrderEmailAddress" placeholder="name@example.com" type="email">
+                <label for="txtPlaceOrderEmailAddress">Email address</label>
+            </div>
+            <section class="row mb-3">
+                <article class="col-7">
+                    <div class="form-floating ">
+                        <input class="form-control " id="txtPlaceOrderPhoneNumber" placeholder="name@example.com"
+                               type="text">
+                        <label for="txtPlaceOrderPhoneNumber">Phone No</label>
+                    </div>
+                </article>
+                <article class="col">
+                    <button class="btn btn-success mt-2" id="btnCustomerSearch" type="button">search Customer</button>
+                </article>
+            </section>
+        </article>
 
-            <div class="form-floating mb-3">
-                <input class="form-control" id="placeOrderCustomerName" placeholder="name@example.com" type="text">
-                <label for="placeOrderCustomerName">Customer Name</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input class="form-control" id="placeOrderCustomerAddress" placeholder="name@example.com" type="text">
-                <label for="placeOrderCustomerAddress">Customer address</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input class="form-control " id="placeOrderEmailAddress" placeholder="name@example.com" type="email">
-                <label for="placeOrderEmailAddress">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input class="form-control " id="placeOrderPhoneNumber" placeholder="name@example.com" type="text">
-                <label for="placeOrderPhoneNumber">Phone No</label>
-            </div>
-        </article>
         <article class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
+            <section class="row">
+                <article class="col-7">
+                    <div class="autocomplete form-floating mb-3">
+                        <input class="form-control" id="txtPlaceOrderItemName" placeholder="name@example.com"
+                               type="text">
+                        <label for="txtPlaceOrderItemName">Item Name</label>
+                    </div>
+                </article>
+                <article class="col">
+                    <button class="btn btn-success mt-2" id="btnItemSearch" type="button">search Item</button>
+                </article>
+            </section>
             <div class="form-floating mb-3">
-                <input class="form-control" id="placeOrderItemName" placeholder="name@example.com" type="text">
-                <label for="itemName">Item Name</label>
+                <input class="form-control " id="txtPlaceOrderItemDescription" placeholder="name@example.com"
+                       type="email">
+                <label for="txtPlaceOrderItemDescription">Item Description</label>
             </div>
             <div class="form-floating mb-3">
-                <input class="form-control " id="placeOrderItemDescription" placeholder="name@example.com" type="email">
-                <label for="placeOrderItemDescription">Item Description</label>
+                <input class="form-control" id="txtPlaceOrderItemPrice" placeholder="name@example.com" type="text">
+                <label for="txtPlaceOrderItemPrice">Item Price</label>
             </div>
-            <div class="form-floating mb-3">
-                <input class="form-control" id="placeOrderItemPrice" placeholder="name@example.com" type="text">
-                <label for="placeOrderItemPrice">Item Price</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input class="form-control " id="placeOrderQty" placeholder="name@example.com" type="text">
-                <label for="placeOrderQty">Quantity on hand</label>
-            </div>
+            <section class="row">
+                <article class="col-8">
+                    <div class="form-floating ">
+                        <input class="form-control " id="txtPlaceOrderQty" placeholder="name@example.com" type="text">
+                        <label for="txtPlaceOrderQty">Quantity</label>
+                    </div>
+                </article>
+                <article class="col">
+                    <button class="btn btn-success mt-2" id="btnAddToCart" type="button">Add Item</button>
+                </article>
+            </section>
         </article>
+
+        <!--        ///////////////////////////////// start ////////////////////////////////////////////////-->
+
+        <div class="col-lg-3">
+            <section class="content-box-2 p-4 ">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <h6 class="" id="total-text">Total : </h6>
+                            <h4>
+                                Rs/= <span id="total">0.00</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <!--<div class="col-12">
+                        <div class="row">
+                            <h6 class="" id="subtotal-text">Sub Total : </h6>
+                            <h4>
+                                Rs/= <span id="subtotal">0.00</span>
+                            </h4>
+                        </div>
+                    </div>-->
+                </div>
+
+                <section class="row">
+                    <article class="col">
+                        <div class="form-floating mb-3">
+                            <input class="form-control " id="placeOrderCash" placeholder="name@example.com" type="text">
+                            <label for="placeOrderCash">Cash</label>
+                        </div>
+                    </article>
+                    <!--<article class="col">
+                        <div class="form-floating mb-3">
+                            <input class="form-control " id="placeOrderDiscount" placeholder="name@example.com"
+                                   type="text">
+                            <label for="placeOrderDiscount">Discount</label>
+                        </div>
+                    </article>-->
+                </section>
+
+                <section class="row">
+                    <article class="col-8">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" disabled id="placeOrderBalance"
+                                   placeholder="name@example.com" type="text">
+                            <label for="placeOrderBalance">Balance</label>
+                        </div>
+                    </article>
+                    <article class="col">
+                        <button class="btn btn-success mt-1" id="btnPayOnAction" type="button">Pay</button>
+                    </article>
+                </section>
+            </section>
+        </div>
+
+        <!--        //////////////////////////////// finish /////////////////////////////////////////////////-->
+    </section>
+
+    <section class="row  mb-3"> <!--mt-2-->
+        <article class="col">
+            <button class="btn btn-success mt-1" id="btnPlaceOrderOnAction" type="button">Place Order</button>
+            <button class="btn btn-danger mt-1" id="btnCancelOrderOnAction" type="button">Cancel Order</button>
+        </article>
+    </section>
+    <section class="row">
         <article class="col" id="placeOrderItemTable">
             <div class="border" style="height: 280px; overflow: auto;">
                 <table class="table table-hover">
@@ -301,83 +394,18 @@
                         <th scope="col">QTY</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I001</th>
-                        <td>Mark</td>
-                        <td>1200</td>
-                        <td>2</td>
-                    </tr>
+                    <tbody id="placeOrderItemDetail">
+                    <!--                    <tr>-->
+                    <!--                        <th scope="row">I001</th>-->
+                    <!--                        <td>Mark</td>-->
+                    <!--                        <td>1200</td>-->
+                    <!--                        <td>2</td>-->
+                    <!--                    </tr>-->
+
                     </tbody>
                 </table>
             </div>
         </article>
-        <section class="row mt-2 mb-3">
-            <article class="col">
-                <button class="btn btn-success mt-1" type="button">Place Order</button>
-                <button class="btn btn-danger mt-1" type="button">Cancel Order</button>
-            </article>
-        </section>
     </section>
 </section>
 
@@ -388,9 +416,24 @@
 
 <script src="model/Customer.js"></script>
 <script src="model/Item.js"></script>
+<script src="model/Order.js"></script>
+<script src="model/OrderDetails.js"></script>
 
 <script src="Controller/DashBoardFromController.js"></script>
 <script src="Controller/ManageCustomerFormController.js"></script>
 <script src="Controller/ManageItemFormController.js"></script>
+<script src="Controller/PlaceOrderFormController.js"></script>
+<script>
+    // customerDATA.push(new Customer('C001', 'thilina', 'halawatha', 'thilinadilshan123@gmail.com', 7154886645));
+    // customerDATA.push(new Customer('C002', 'pasan', 'panadura', 'pasankota@gmail.com', 7154886645));
+    // customerDATA.push(new Customer('C003', 'yohan', 'panadura', 'yohansamitha@gmail.com', 7154886645));
+    itemDATA.push(new Item('I001', 'parippu', 'adfasdfadfa', 120.00, 500));
+    itemDATA.push(new Item('I002', 'sini', 'adfasdfadfa', 200.00, 1000));
+    itemDATA.push(new Item('I003', 'hal', 'adfasdfadfa', 455.00, 5000));
+    itemDATA.push(new Item('I004', 'mas', 'adfasdfadfa', 875.00, 1000));
+    // loadAllCustomer();
+    loadAutoBind();
+    console.log('testing')
+</script>
 </body>
 </html>
