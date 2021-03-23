@@ -36,6 +36,10 @@ function clearAllItem() {
     $('#txtItemDescription').val("");
     $('#txtItemPrice').val("");
     $('#txtItemQty').val("");
+    $('#txtItemName,#txtItemDescription,#txtItemPrice,#txtItemQty').css(
+        'border-color', '#86b7fe',
+        'box-shadow', '0 0 0 0.25rem rgb(13 110 253 / 25%)'
+    );
 }
 
 // to load new item id
@@ -69,6 +73,11 @@ function saveItem() {
     clearAllItem();
     loadItemID();
     loadAutoBind();
+    $('#txtItemName,#txtItemDescription,#txtItemPrice,#txtItemQty').css(
+        'border-color', '#86b7fe',
+        'box-shadow', '0 0 0 0.25rem rgb(13 110 253 / 25%)'
+    );
+    $("#txtItemName").focus();
 }
 
 // save button action
@@ -82,4 +91,95 @@ $('#btnCancelItem').on('click', function () {
     clearAllItem();
     loadItemID();
     loadALLItem();
-})
+});
+
+$("#txtItemName").on('keydown', function (event) {
+    if (event.key == "Enter") {
+        $("#txtItemDescription").focus();
+    }
+    let cusRegEx = /^[A-z]{5,}$/;
+    let inputID = $("#txtItemName").val();
+    if (cusRegEx.test(inputID)) {
+        $("#txtItemName").css(
+            // 'border', '2px solid green',
+            'border-color', '#86b7fe',
+            'box-shadow', '0 0 0 0.25rem rgb(13 110 253 / 25%)');
+        $("#lblcusid").text("");
+    } else {
+        $("#txtItemName").css(
+            'border', '2px solid red',
+            'border-color', '#f30505',
+            'box-shadow', '0 0 0 0.25rem rgb(253 13 13 / 25%)!important');
+        $("#lblcusid").text('Your Input Data Format is Wrong (C00-001)');
+    }
+});
+
+$("#txtItemDescription").on('keydown', function (event) {
+    if (event.key == "Enter") {
+        $("#txtItemPrice").focus();
+    }
+    let cusRegEx = /^[A-z]{5,}$/;
+    let inputID = $("#txtItemDescription").val();
+    if (cusRegEx.test(inputID)) {
+        $("#txtItemDescription").css(
+            // 'border', '2px solid green',
+            'border-color', '#86b7fe',
+            'box-shadow', '0 0 0 0.25rem rgb(13 110 253 / 25%)');
+        $("#lblcusid").text("");
+    } else {
+        $("#txtItemDescription").css(
+            'border', '2px solid red',
+            'border-color', '#f30505',
+            'box-shadow', '0 0 0 0.25rem rgb(253 13 13 / 25%)!important');
+        $("#lblcusid").text('Your Input Data Format is Wrong (C00-001)');
+    }
+});
+
+$("#txtItemPrice").on('keydown', function (event) {
+    if (event.key == "Enter") {
+        $("#txtItemQty").focus();
+    }
+    let cusRegEx = /^[0-9]+$/;
+    let inputID = $("#txtItemPrice").val();
+    if (cusRegEx.test(inputID)) {
+        $("#txtItemPrice").css(
+            // 'border', '2px solid green',
+            'border-color', '#86b7fe',
+            'box-shadow', '0 0 0 0.25rem rgb(13 110 253 / 25%)');
+        $("#lblcusid").text("");
+    } else {
+        $("#txtItemPrice").css(
+            'border', '2px solid red',
+            'border-color', '#f30505',
+            'box-shadow', '0 0 0 0.25rem rgb(253 13 13 / 25%)!important');
+        $("#lblcusid").text('Your Input Data Format is Wrong (C00-001)');
+    }
+});
+
+$("#txtItemQty").on('keydown', function (event) {
+    if (event.key == "Enter") {
+        saveItem();
+    }
+    let cusRegEx = /^[0-9]+$/;
+    let inputID = $("#txtItemQty").val();
+    if (cusRegEx.test(inputID)) {
+        $("#txtItemQty").css(
+            // 'border', '2px solid green',
+            'border-color', '#86b7fe',
+            'box-shadow', '0 0 0 0.25rem rgb(13 110 253 / 25%)');
+        $("#lblcusid").text("");
+    } else {
+        $("#txtItemQty").css(
+            'border', '2px solid red',
+            'border-color', '#f30505',
+            'box-shadow', '0 0 0 0.25rem rgb(253 13 13 / 25%)!important');
+        $("#lblcusid").text('Your Input Data Format is Wrong (C00-001)');
+    }
+});
+
+
+$('#txtItemName,#txtItemDescription,#txtItemPrice,#txtItemQty').on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
